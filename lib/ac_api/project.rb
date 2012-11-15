@@ -21,8 +21,6 @@ class AcApi::Project
 		url = "#{@api_url}?path_info=/projects/#{self.id}/tasks&auth_api_token=#{@token}"
 		response = HTTParty.get(url)
 		response_tasks = response["tasks"].first[1]
-		response_tasks = *response_tasks
-		response_tasks.flatten!
 		tasks = response_tasks.collect do |t|
 			AcApi::Task.from_hash(t,@api_url, @token)
 		end
