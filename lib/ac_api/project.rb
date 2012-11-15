@@ -22,7 +22,7 @@ class AcApi::Project
 		response = HTTParty.get(url)
 		response_tasks = response["tasks"].first[1]
 		tasks = response_tasks.collect do |t|
-			AcApi::Task.from_hash(t)
+			AcApi::Task.from_hash(t,@api_url, @token)
 		end
 		tasks
 	end

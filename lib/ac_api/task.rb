@@ -20,8 +20,8 @@ class AcApi::Task
 	end
 
 	private
-	def self.from_hash(hash)
-		task = AcApi::Task.new
+	def self.from_hash(hash,api_url, token)
+		task = AcApi::Task.new(api_url, token)
 		task.id = hash["id"].to_i
 		task.name = hash["name"]
 		task.permalink = hash["permalink"]
