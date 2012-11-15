@@ -4,7 +4,6 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 
 require 'ac_api/version'
-require 'ac_api/project'
 
 Gem::Specification.new do |gem|
   gem.name          = "ac_api"
