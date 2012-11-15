@@ -11,14 +11,13 @@ class AcApi::User
     url = "#{api_url}?auth_api_token=#{token}&path_info=info"
     response = HTTParty.get(url)
     response_user = response["info"]
-    user = response_user.collect do |u|
-      AcApi::User.from_hash(u, api_url, token)
+    user = AcApi::User.from_info(response_user, api_url, token)
     end
     user
   end
 
   private
-  def self.from_hash(hash, api_url, token)
+  def self.from_info(hash, api_url, token)
     user = AcApi::User.new(api_url, token)
     user.id = hash["logged_user"]["id"].to_i
     user.name = hash["logged_user"]["name"]
