@@ -11,8 +11,7 @@ class AcApi::User
     url = "#{api_url}?auth_api_token=#{token}&path_info=info"
     response = HTTParty.get(url)
     response_user = response["info"]
-    user = AcApi::User.from_info(response_user, api_url, token)
-    end
+    user = AcApi::User.from_info(response_user, api_url, token)    
     user
   end
 
