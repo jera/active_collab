@@ -6,22 +6,22 @@ class AcApi::TimeRecord
 
 	private
 	def self.from_hash(hash)
-		task = AcApi::TimeRecord.new
-		id = hash["id"].to_i
-		permalink = hash["permalink"]
-		urls = hash["urls"]
-		permissions = hash["permissions"]
-		created_on = hash["created_on"]
-		created_by = hash["created_by"]
-		parent_class = hash["parent_class"]
-		parent_id = hash["parent_id"].to_i
-		state = hash["state"].to_i
-		project_id = hash["project"]["id"].to_i
-		billable_status = hash["billable_status"].to_i
-		value = hash["value"].to_f
-		record_date = hash["record_date"]
-		summary = hash["summary"]
-		user_id = hash["user"]["id"]
-		job_type_id = hash["job_type"]["id"]
+		time_record = AcApi::TimeRecord.new
+		time_record.id = hash["id"].to_i
+		time_record.permalink = hash["permalink"]
+		time_record.urls = hash["urls"]
+		time_record.permissions = hash["permissions"]
+		time_record.created_on = hash["created_on"]
+		time_record.created_by = hash["created_by"]
+		time_record.parent_class = hash["parent_class"]
+		time_record.parent_id = hash["parent_id"].to_i
+		time_record.state = hash["state"].to_i
+		time_record.project_id = hash["project"]["id"].to_i
+		time_record.billable_status = hash["billable_status"].to_i
+		time_record.value = hash["value"].to_f
+		time_record.record_date = hash["record_date"]
+		time_record.summary = hash["summary"]
+		time_record.user_id = hash["user"]["id"]
+		time_record.job_type_id = hash["job_type"]["id"]
 	end
 end
