@@ -17,12 +17,12 @@ class AcApi::Project
 		projects
 	end
 
-	def tasks
-		url = "#{@api_url}?path_info=/projects/#{self.id}/tasks&auth_api_token=#{@token}"
+	def tasks(api_url, token)
+		url = "#{api_url}?path_info=/projects/#{self.id}/tasks&auth_api_token=#{token}"
 		response = HTTParty.get(url)
 		response_tasks = response["tasks"].first[1]
 		tasks = response_tasks.collect do |t|
-			AcApi::Task.from_hash(t,@api_url, @token)
+			AcApi::Task.from_hash(t,api_url, token)
 		end
 		tasks
 	end
