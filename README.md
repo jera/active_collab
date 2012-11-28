@@ -19,7 +19,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'active_collab'
+
+#creating a client
+url = "http://myactivecollabinstance.com/api.php"
+api_key = MY_API_KEY
+client = ActiveCollab::Client.new(url,api_key)
+
+#listing projects
+projects = client.projects
+
+#listing tasks
+tasks = client.tasks
+
+```
+
 
 ## Contributing
 

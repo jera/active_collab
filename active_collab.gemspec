@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["marcosbeirigo@gmail.com", "diogo@jera.com.br"]
   gem.description   = "activecollab ruby"
   gem.summary       = "activecollab ruby"
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/jera/active_collab"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
