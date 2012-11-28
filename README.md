@@ -1,6 +1,7 @@
 # ActiveCollab
 
-TODO: Write a gem description
+Ruby client for the active collab 3 Api.<br>
+This is a work in progress on it's early development.
 
 ## Installation
 
