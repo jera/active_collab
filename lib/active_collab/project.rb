@@ -3,7 +3,7 @@ class ActiveCollab::Project
 								:category_id, :label_id, :company_id, :is_member
 
 
-	def from_hash(hash)
+	def self.from_hash(hash)
 		project = ActiveCollab::Project.new
 		project.id = hash["id"].to_i
 		project.name = hash["name"]

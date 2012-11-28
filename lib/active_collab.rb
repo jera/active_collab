@@ -1,9 +1,9 @@
 require 'httparty'
 require "active_collab/version"
-require 'active_collab/project'
-require 'active_collab/task'
-require 'active_collab/time_record'
-require 'active_collab/user'
+require 'active_collab/api/projects'
+require 'active_collab/api/tasks'
+require 'active_collab/api/time_records'
+require 'active_collab/api/users'
 
 module ActiveCollab
   class Client
@@ -14,7 +14,7 @@ module ActiveCollab
     include ActiveCollab::API::Users
 
   	def initialize(url, api_key)
-  		@url = url
+  		@api_url = url
   		@api_key = api_key
   	end
 
