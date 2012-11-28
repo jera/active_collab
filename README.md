@@ -22,7 +22,7 @@ Or install it yourself as:
 ```ruby
 require 'active_collab'
 
-#creating a client
+#create a client
 url = "http://myactivecollabinstance.com/api.php"
 api_key = MY_API_KEY
 client = ActiveCollab::Client.new(url,api_key)
@@ -30,8 +30,9 @@ client = ActiveCollab::Client.new(url,api_key)
 #listing projects
 projects = client.projects
 
-#listing tasks
-tasks = client.tasks
+
+#listing tasks for project_id = 1
+tasks = client.tasks(1)
 
 ```
 
