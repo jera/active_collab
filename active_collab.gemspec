@@ -3,11 +3,11 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 
-require 'ac_api/version'
+require 'active_collab/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "ac_api"
-  gem.version       = AcApi::VERSION
+  gem.name          = "active_collab"
+  gem.version       = ActiveCollab::VERSION
   gem.authors       = ["Marcos Beirigo", "Diogo Soares"]
   gem.email         = ["marcosbeirigo@gmail.com", "diogo@jera.com.br"]
   gem.description   = "activecollab ruby"

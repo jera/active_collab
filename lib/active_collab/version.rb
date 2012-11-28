@@ -1,3 +1,3 @@
-module AcApi
+module ActiveCollab
   VERSION = "0.0.1"
 end

@@ -1,12 +1,11 @@
-class AcApi::TimeRecord
+class ActiveCollab::TimeRecord
 
 	attr_accessor :id, :permalink, :urls, :permissions, 
 		:created_on, :created_by, :parent_class, :parent_id, :state, 
 		:project_id, :billable_status, :value, :record_date, :summary, :user_id, :job_type_id
 
-	private
 	def self.from_hash(hash)
-		time_record = AcApi::TimeRecord.new
+		time_record = ActiveCollab::TimeRecord.new
 		time_record.id = hash["id"].to_i
 		time_record.permalink = hash["permalink"]
 		time_record.urls = hash["urls"]
@@ -24,4 +23,5 @@ class AcApi::TimeRecord
 		time_record.user_id = hash["user"]["id"]
 		time_record.job_type_id = hash["job_type"]["id"]
 	end
+
 end

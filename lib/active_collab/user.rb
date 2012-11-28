@@ -1,23 +1,9 @@
-class AcApi::User
+class ActiveCollab::User
 
   attr_accessor :id, :name, :permalink, :state, :first_name, :last_name, :display_name, :short_display_name, :email
 
-  def initialize(api_url, token)
-    @api_url = api_url
-    @token = token
-  end
-
-  def self.user_info(api_url, token)
-    url = "#{api_url}?auth_api_token=#{token}&path_info=info"
-    response = HTTParty.get(url)
-    response_user = response["info"]
-    user = AcApi::User.from_info(response_user, api_url, token)    
-    user
-  end
-
-  private
-  def self.from_info(hash, api_url, token)
-    user = AcApi::User.new(api_url, token)
+  def self.from_info(hash)
+    user = ActiveCollab::User.new(api_url, token)
     user.id = hash["logged_user"]["id"].to_i
     user.name = hash["logged_user"]["name"]
     user.permalink = hash["logged_user"]["permalink"]

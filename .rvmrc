@@ -1,1 +1,1 @@
-rvm use 1.9.3@ac_api --create
+rvm use 1.9.3@active_collab --create
