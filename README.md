@@ -30,9 +30,14 @@ client = ActiveCollab::Client.new(url,api_key)
 #listing projects
 projects = client.projects
 
-
 #listing tasks for project_id = 1
 tasks = client.tasks(1)
+
+#listing categories for project_id = 1
+tasks = client.categories(1)
+
+#creating a tsk for project_id = 1
+task = client.add_task(1, {"name": "New task", "body": "New task description."})
 
 ```
 
