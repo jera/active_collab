@@ -4,6 +4,7 @@ require 'active_collab/api/projects'
 require 'active_collab/api/tasks'
 require 'active_collab/api/time_records'
 require 'active_collab/api/users'
+require 'active_collab/api/categories'
 
 module ActiveCollab
   class Client
@@ -12,6 +13,7 @@ module ActiveCollab
     include ActiveCollab::API::Tasks
     include ActiveCollab::API::TimeRecords
     include ActiveCollab::API::Users
+    include ActiveCollab::API::Categories
 
   	def initialize(url, api_key)
   		@api_url = url

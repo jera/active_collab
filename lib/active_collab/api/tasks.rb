@@ -18,6 +18,13 @@ module ActiveCollab
 				tasks
 			end
 
+			def add_task(project_id, task_options = {})
+				url = "#{@api_url}?path_info=/projects/#{project_id}/tasks/add&auth_api_token=#{@api_key}"
+				options = { body: {task: task_options, submitted: 'submitted'} }
+				response = HTTParty.post(url, options)
+				ActiveCollab::Task.from_hash(response["task"])
+			end
+
 		end
 	end
 end
